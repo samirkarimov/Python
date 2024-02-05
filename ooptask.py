@@ -1,24 +1,31 @@
 class Book:
     def __init__(self, title, author, isbn):
-        # TODO: Initialize attributes (Title, Author, ISBN)
-        pass
+        self.title=title
+        self.author=author
+        self.isbn=isbn
+class UsedBook:
+    def __init__(self,title,author,isbn,age):
+        pass    
 
 class Library:
     def __init__(self):
-        # TODO: Initialize the book collection (use a list)
-        pass
+        self.books=[]
+        
 
     def add_book(self, book):
-        # TODO: Implement the method to add a book to the library
-        pass
+        self.books.append(book)
+       
 
     def remove_book(self, isbn):
-        # TODO: Implement the method to remove a book from the library
-        pass
+        for book in self.books:
+            if book.isbn==isbn:
+                self.books.remove(book)
+       
 
     def display_books(self):
-        # TODO: Implement the method to display all books in the library
-        pass
+        for book in self.books:
+            print(f"{book.title},{book.author},{book.isbn}")
+        
 
 # Menu-driven program to interact with the library
 library = Library()
@@ -33,13 +40,17 @@ while True:
     choice = input("Enter your choice: ")
 
     if choice == '1':
-        # TODO: Ask the user for book details and add the book to the library
-        pass
+        t=input('Type book title: ')
+        a=input('Type book author: ')
+        i=input('Type book isbn: ')
+        book=Book(t,a,i)
+        library.add_book(book)
+        
     elif choice == '2':
-        # TODO: Ask the user for the ISBN and remove the book from the library
-        pass
+        isbn=input('Type wanted isbn number: ')
+        library.remove_book(isbn)
     elif choice == '3':
-        # TODO: Display all books in the library
+        library.display_books()
         pass
     elif choice == '4':
         print("Exiting the program. Goodbye!")
