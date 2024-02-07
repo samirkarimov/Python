@@ -48,4 +48,3 @@ Now, let's break it down:
 
 8. `finally:`: This block is always executed, whether an exception occurred or not. It is often used for cleanup operations.
 
-In summary, this code attempts to get user input, perform a division operation, and handles potential errors that may occur during these operations. The `else` block is executed if there are no exceptions, and the `finally` block is always executed.
